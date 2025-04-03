@@ -1,0 +1,35 @@
+.Searchbar{
+    place-self: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    width: 420px;
+    // border: 2px solid black;
+
+    .Container{
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+
+        .Icon{
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none; 
+        }
+
+        .Search{
+            padding-left: 40px; 
+            height: 36px;
+            border: 2px solid gray;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
+    }
+}

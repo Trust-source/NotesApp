@@ -1,0 +1,24 @@
+.Navbar{
+    place-self: center;
+    padding: 10px; 
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 420px;
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+
+    
+    // color: rgb(59, 59, 214);
+ 
+    background-color: rgb(255, 255, 255);
+
+    flex-direction: row;
+    justify-content: space-between;
+    .Home,.Search,.Post,.Profile{
+        cursor: pointer;
+        width: auto;
+
+    }
+}

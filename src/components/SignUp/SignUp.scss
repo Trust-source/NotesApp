@@ -1,0 +1,149 @@
+.SignUp{
+    place-self: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+
+
+    // font-family: "Dancing Script", cursive;
+    .Heading{
+        margin-top: 10px;
+        margin-bottom: 90px;
+    }
+    .Login{
+        margin-bottom: 25px;
+    }
+    .Form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        width: auto;   
+
+        .Container{
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+
+            .Icon{
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none; 
+            }
+
+            .Email{
+                padding-left: 40px; 
+                height: 36px;
+                border: 2px solid gray;
+                border-radius: 5px;
+                width: 300px;
+                font-size: 16px;
+
+            }
+        }
+        .Container3{
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+
+            .Icon3{
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none; 
+            }
+
+            .Username{
+                padding-left: 40px; 
+                height: 36px;
+                border: 12x solid gray;
+                border-radius: 5px;
+                width: 300px;
+                font-size: 16px;
+            }
+        }
+            .Container2{
+                position: relative;
+                display: inline-block;
+                margin-bottom: 40px;
+        
+                .Icon2{
+                    position: absolute;
+                    left: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none; 
+                }
+        
+                .Password{
+                    padding-left: 40px; 
+                    height: 36px;
+                    border: 2px solid gray;
+                    border-radius: 5px;
+                    width: 300px;
+                    font-size: 16px;
+
+                }
+        }
+    }
+
+    .Button{
+        display: flex;
+        background-color: #1cab26;
+        color: white;
+        border-radius: 5px;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+        font-size: smaller;
+        padding: 3px;
+        margin-bottom: 40px;
+        cursor: pointer;
+
+    }
+
+
+
+
+
+    .Group{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+        .Line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: gray;
+        }
+        
+        .Text {
+            margin: 0 10px;
+            white-space: nowrap;
+            font-size: 15px;
+        }
+    }
+
+    .Button2{
+        display: flex;
+        background-color: white;
+        color: #1cab26;
+        // color: white;
+        border-radius: 5px;
+        border: 2px solid #1cab26;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+        font-size: smaller;
+        padding: 3px;
+        margin-bottom: 30px; 
+        cursor: pointer;
+    }
+}

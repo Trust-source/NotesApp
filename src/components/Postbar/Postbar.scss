@@ -1,0 +1,11 @@
+.Postbar{
+    place-self: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    width: 420px;
+}
