@@ -12,8 +12,6 @@ function Homepage() {
     <Topbar/>
     <div className="Container">
     <Feed/>
-    <Feed/>
-    <Feed/>
     </div>
     <Navbar/>
     </div>

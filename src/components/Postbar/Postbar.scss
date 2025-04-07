@@ -8,4 +8,51 @@
     position: relative;
     box-sizing: border-box;
     width: 420px;
+    justify-content: space-around;
+    .Image{
+        input{
+            padding-left: 40px; 
+            height: 60px;
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
+       img{
+        margin: 10px 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f5f5f5;
+        border-radius: 4px;
+        overflow: hidden;
+        max-width: 150px;
+       }
+    }
+  
+        .Caption{
+            padding-left: 40px; 
+            height: 60px;
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+    .ButtonContainer{
+        .Button{
+            display: flex;
+            background-color: #1cab26;
+            color: white;
+            border-radius: 5px;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            font-size: smaller;
+            padding: 3px;
+            margin-bottom: 40px;
+            cursor: pointer;
+        }
+    }
 }

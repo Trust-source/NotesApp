@@ -11,7 +11,7 @@
     padding: 10px;
     margin-right: 20px;
     margin-left: 20px;
-    
+    position: absolute;
 
     .First{
         display: flex;
@@ -55,6 +55,28 @@
             margin-top: 10px;
             font-size: 16px;
             font-weight: 600;
+        }
+    }
+
+    .Third{
+        width: 200px;
+
+        position: relative;
+        left: 120px;
+        bottom: 20px;
+
+        .Button{
+            display: flex;
+            background-color: #de2d2de2;
+            color: white;
+            border-radius: 5px;
+            width: 150px;
+            justify-content: center;
+            align-items: center;
+            font-size: smaller;
+            padding: 3px;
+            margin-bottom: 40px;
+            cursor: pointer;
         }
     }
 }
