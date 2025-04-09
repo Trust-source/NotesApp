@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { account } from "../config/Appwrite"; // Import Appwrite account instance
+import  supabase from "../config/Supabase"; // Import Supabase instance
 
 const ProtectedRoute = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -8,14 +8,15 @@ const ProtectedRoute = ({ children }) => {
 
   useEffect(() => {
     const checkUser = async () => {
-      try {
-        const session = await account.get(); // Fetch logged-in user
-        setUser(session);
-      } catch (error) {
+      const { data, error } = await supabase.auth.getUser(); // Get authenticated user
+
+      if (error || !data.user) {
         setUser(null);
-      } finally {
-        setLoading(false);
+      } else {
+        setUser(data.user);
       }
+      
+      setLoading(false);
     };
 
     checkUser();

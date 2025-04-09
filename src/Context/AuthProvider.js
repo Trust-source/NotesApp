@@ -1,50 +1,34 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
-import { account } from "../config/Appwrite"; // Import Appwrite config
+import React, { createContext, useContext } from "react";
+import supabase from "../config/Supabase"; // Ensure Supabase is correctly configured
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  // Check if user is already logged in
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await account.get(); // Get current user session
-        setUser(response);
-      } catch (error) {
-        setUser(null);
-      }
-      setLoading(false);
-    };
-
-    fetchUser();
-  }, []);
-
   const login = async (email, password) => {
-    try {
-      const session = await account.createEmailPasswordSession(email, password);
-      console.log("Session:", session)
-      const userData = await account.get();
-      setUser(userData);
-      return userData;
-    } catch (error) {
-      console.error(error)
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      console.error("Login error:", error.message);
+      throw new Error(error.message); // Throw the actual error message
     }
+    return data;
   };
 
   const logout = async () => {
-    await account.deleteSession("current");
-    setUser(null);
+    const { error } = await supabase.auth.signOut();
+    if (error) throw new Error(error.message);
+  };
+
+  const signUp = async (email, password) => {
+    const { error } = await supabase.auth.signUp({ email, password });
+    if (error) throw new Error(error.message);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
+    <AuthContext.Provider value={{ login, logout, signUp }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-// Custom hook to use the AuthContext
 export const useAuth = () => useContext(AuthContext);

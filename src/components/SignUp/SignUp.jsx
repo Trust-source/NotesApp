@@ -3,7 +3,7 @@ import './SignUp.scss';
 import { User, LockKeyhole, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { account, ID } from '../../config/Appwrite'; // Import Appwrite account & ID
+import supabase from '../../config/Supabase'; 
 import Message from '../Message/Message';
 
 function SignUp() {
@@ -15,21 +15,34 @@ function SignUp() {
 
   const signUp = async () => {
     console.log('Sign-up function triggered');
+    
     if (!email || !password || !username) {
       setMessage('All fields are required.');
       return;
     }
 
     try {
-      // Create user account in Appwrite
-      const response = await account.create(ID.unique(), email, password, username);
-      console.log('User registered:', response);
+      // Create user in Supabase Auth
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password
+      });
 
-      // Optionally, store user data in Appwrite's database
-      // If you're using a users collection, you'd create a record there
+      if (error) throw error;
+      console.log('User registered:', data);
+
+      // Get the newly created user ID
+      const userId = data?.user?.id;
+      if (!userId) {
+        setMessage('Error retrieving user ID.');
+        return;
+      }
+
+    
 
       alert('Account created! Now login.');
       navigate('/');
+
     } catch (err) {
       console.error('Sign-up error:', err);
       setMessage(err.message);
@@ -38,8 +51,7 @@ function SignUp() {
 
   return (
     <div className='SignUp'>
-      <h3 className="Heading">FlexiGram</h3>
-
+      <h3 className="Heading">FlexiNotes</h3>
       <h3 className="Login">Create an account</h3>
 
       <form className='Form'>

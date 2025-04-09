@@ -4,10 +4,22 @@
     font-family: "Inter", serif;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     background-color: rgb(255, 255, 255);
+    background-color:  #0f6e16;
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
     // border: 2px solid black;
     // position: fixed;
     top: 0;
     margin-bottom: 7px;
+
+    .Flexi{
+        margin-right: 10px;
+        
+       
+    }
+    .Logo{
+        cursor: pointer;
+    }
 }

@@ -14,6 +14,10 @@ function SignIn() {
   const [message, setMessage] = useState('');
 
   const handleLogin = async () => {
+    if(!email||!password){
+      setMessage('Please fill in all fields');
+      return;
+    }
     try {
       await login(email, password);
       alert('Logged-in');
@@ -26,8 +30,8 @@ function SignIn() {
 
   return (
     <div className='SignIn'>
-      <h3 className='Heading'>FlexiGram</h3>
-      <h3 className='Login'>Log in to FlexiGram</h3>
+      <h3 className='Heading'>FlexiNotes</h3>
+      <h3 className='Login'>Log in to FlexiNotes</h3>
 
       <form className='Form'>
         <div className='Container'>

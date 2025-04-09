@@ -13,51 +13,7 @@
     margin-left: 20px;
     position: absolute;
 
-    .First{
-        display: flex;
-        width: 420px;
-        justify-content: space-between;
-        align-items: center;
-        // border: 2px solid black;
-        font-weight: 500;
-
-        img{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: contain;
-            border: 3px solid rgb(193, 188, 188);
-        }
-
-        .Followers{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .Following{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-    .Second{
-        display: flex;
-        flex-direction: column;
-        .Username{
-            // border: 2px solid black;
-            width: 420px;
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-            font-size: 16px;
-            font-weight: 600;
-        }
-    }
-
+  
     .Third{
         width: 200px;
 
@@ -67,7 +23,7 @@
 
         .Button{
             display: flex;
-            background-color: #de2d2de2;
+            background-color: #1cab26;
             color: white;
             border-radius: 5px;
             width: 150px;

@@ -8,13 +8,54 @@
     box-sizing: border-box;
     // border: 2px solid black;
     width: 420px;
-    // position: absolute;
+    
 
     .Container{
         width: 420px;
         padding-bottom: 40px;
         // border: 2px solid black;
         height: auto;
+
+
+        .PostList {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+
+            .PostPreview {
+                padding: 10px;
+                display: flex;
+                flex-direction: row;
+                border: 1.5px solid #39423a;
+                border-radius: 5px;
+                transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow on hover */
+                position: relative;
+  
+              
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+                
+                .Logo{
+                  position: absolute;
+                  right: 0;
+                  cursor: pointer;
+                }
+                
+                &:hover {
+                  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+                }
+              }
+
+              .PostPreview p {
+                font-size: 18px;
+                font-weight: bold;
+              }
+              
+              .PostPreview p {
+                font-size: 14px;
+              }
+          }
+
 
     }
 }

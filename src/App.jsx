@@ -8,8 +8,9 @@
   import SignIn from './components/SignIn/SignIn';
   import SignUp from './components/SignUp/SignUp';
   import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-  import PostProvider from './Context/PostProvider';
   import { AuthProvider } from './Context/AuthProvider';
+import Notes from './components/Notes/Notes';
+
 
 
 
@@ -18,7 +19,7 @@
 
     return (
       <AuthProvider>
-      <PostProvider>
+      
       <Router>
       <div className="App">
           <Routes>
@@ -28,13 +29,16 @@
           <Route path='/Search' element={<ProtectedRoute><Searchbar/></ProtectedRoute>}/>
           <Route path='/Post' element={<ProtectedRoute><Postbar/></ProtectedRoute>}/>
           <Route path='/Profile' element={<ProtectedRoute><Profilebar/></ProtectedRoute>}/>
+          <Route path='/Notes/:id' element={<ProtectedRoute><Notes/></ProtectedRoute>}/>
+
+
           </Routes>
 
 
       </div>
       </Router>
-      </PostProvider>
       </AuthProvider>
+
     );
   }
 
