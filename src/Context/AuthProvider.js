@@ -1,6 +1,7 @@
 import React, { createContext, useContext } from "react";
 import supabase from "../config/Supabase"; // Ensure Supabase is correctly configured
 
+
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -16,6 +17,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     const { error } = await supabase.auth.signOut();
+    
     if (error) throw new Error(error.message);
   };
 

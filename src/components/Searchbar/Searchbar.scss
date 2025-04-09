@@ -1,4 +1,4 @@
-.Searchbar{
+.Searchbar {
     place-self: center;
     min-height: 100vh;
     display: flex;
@@ -8,28 +8,66 @@
     position: relative;
     box-sizing: border-box;
     width: 420px;
-    // border: 2px solid black;
-
-    .Container{
-        position: relative;
-        display: inline-block;
-        margin-top: 20px;
-
-        .Icon{
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none; 
-        }
-
-        .Search{
-            padding-left: 40px; 
-            height: 36px;
-            border: 2px solid gray;
-            border-radius: 5px;
-            width: 300px;
-            font-size: 16px;
-        }
+  
+    .Container {
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+  
+      .Icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+  
+      .Search {
+        padding-left: 40px;
+        height: 36px;
+        border: 2px solid gray;
+        border-radius: 5px;
+        width: 300px;
+        font-size: 16px;
+      }
     }
-}
+  
+    .SearchResults {
+
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-height: 250px;
+      overflow-y: auto;
+      margin-top: 5px;
+      z-index: 1;
+      width: 300px;
+  
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+  
+      li {
+        padding: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+  
+        &:hover {
+          background-color: #f7f7f7;
+        }
+      }
+    }
+  
+    .NoResults {
+      padding: 10px;
+      color: #555;
+      font-style: italic;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  

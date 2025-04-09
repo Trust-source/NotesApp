@@ -2,10 +2,20 @@ import React, {useState } from 'react';
 import './Profilebar.scss';
 import Navbar from '../Navbar/Navbar';
 import { motion } from 'framer-motion';
+import { useAuth } from '../../Context/AuthProvider';
+import { useNavigate } from 'react-router-dom';
+
 
 
 function Profilebar() {
-  const [following, setFollowing] = useState(false);
+
+  const navigate = useNavigate();
+  const {logout}= useAuth();
+  const handleLogout = () =>{
+    logout()
+    navigate("/")
+    alert("Sign out")
+  }
   
 
   return (
@@ -13,11 +23,11 @@ function Profilebar() {
       <div className="Third">
         <motion.div 
           className='Button'
-          onClick={() => setFollowing(!following)}
+          onClick={handleLogout }
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          {following ? "Following" : "Follow"}
+          Log-out
         </motion.div>
       </div>
       <Navbar />

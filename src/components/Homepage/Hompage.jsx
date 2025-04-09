@@ -29,7 +29,7 @@ function Homepage() {
   const deleteNote = (id) =>{
    
   const storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
-  console.log(storedPosts)
+
 
 
   const updatedPosts = storedPosts.filter((post) => post.id && post.id !== id);
