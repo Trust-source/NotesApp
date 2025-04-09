@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React from 'react';
 import './Profilebar.scss';
 import Navbar from '../Navbar/Navbar';
 import { motion } from 'framer-motion';

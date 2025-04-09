@@ -3,7 +3,7 @@ import './Homepage.scss'
 import Navbar from '../Navbar/Navbar'
 import Topbar from '../Topbar/Topbar'
 import { useEffect } from 'react'
-import {  useNavigate, useParams } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import { Trash2 } from 'lucide-react';
 
 
@@ -12,7 +12,6 @@ import { Trash2 } from 'lucide-react';
 function Homepage() {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
-  const { id } = useParams();
 
 
   const handlePreviewClick = (id) => {
